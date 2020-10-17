@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Шпора по формам</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+<header><h1>Формы в HTML</h1>
+    <p id="mainP">
+        <img id="topLeft" alt="уголок" src="./resources/ornament_01.svg.png">
+        <img id="topRight" alt="уголок" src="./resources/ornament_01.svg.png">
+        Форма (англ. form) в HTML — раздел документа, позволяющий пользователю вводить информацию для последующей обработки системой.<br>
+    Синтаксически форма в HTML задаётся с помощью элемента <b>&lt;form&gt;</b> и в дополнение к разметке обычных элементов <br>
+        содержит разметку для элементов управления (англ. controls), надписей (англ. label) и других.<br>
+    </p>
+    <button><a href="https://html5book.ru/html5-forms/" target="_blank">Подробный текст тут (жмите)</a></button>
+
+</header>
+
+
+<main>
+    <section>
+    <h3>Типичная форма:</h3> <br>
+
+        <form name="Training form" action="index.html" method="post">
+
+            <input type="text" id="text_1" name="text_1"> <br>
+            <label for="text_1">Введите значение</label> <br>
+        ---------------------------<br>
+            <input type="checkbox" id="checkbox_1">
+            <label for="checkbox_1">Отметьте, если надо</label> <br>
+        ---------------------------<br>
+            <p>Любите ли Вы экономить время?</p>
+            <label>Да<input type="radio" name="time" value="yes" checked></label>
+            <label>Нет<input type="radio" name="time" value="no"></label>
+            <br>
+        --------------------------<br>
+            <input type="submit" value="Отправить">
+        </form>
+    </section>
+<!-- ----------------------------------------------------------------------- -->
+    <table id="Главная-таблица">
+        <caption>Шпаргальная таблица по формам</caption>
+        <tr class="table-header">
+            <th scope="col">Тип элемента</th>
+            <th scope="col">Сам элемент</th>
+            <th scope="col">Код (картинка)</th>
+            <th scope="col">Разъяснение</th>
+        </tr>
+        <tr class="radio-row">
+            <td class="tipEl">radio</td>
+            <td class="samEl">
+                <label for="radioYes">Да</label>
+                <input type="radio" id="radioYes" name="time" value="yes" checked>
+                <label for="radioNo">Нет</label>
+                <input type="radio" id="radioNo" name="time" value="no">
+            </td>
+            <td class="codeImage"><img src="./resources/radio1.PNG" alt="код радиоточки"></td>
+            <td class="comment">
+                    <li>Input можно завернуть прямо в label</li>
+                    <li>Пред-выбранному варианту прописать checked внутри input-a</li>
+                    <li>Name у всех радиоточек одной группы должно быть одно</li>
+            </td>
+        </tr>
+        <tr class="text">
+            <td class="tipEl">text</td>
+            <td class="samEl">
+                <input type="text" id="text_2" name="text_2">  <br>
+                <label for="text_2">Введите значение</label>   <br>
+            </td>
+            <td class="codeImage"><img src="./resources/text.PNG" alt="код текста"></td>
+            <td class="comment"></td>
+        </tr>
+        <tr class="password">
+            <td class="tipEl">password</td>
+            <td class="samEl">
+                <input type="password" id="password" name="password"> <br>
+                <label for="password">Введите пароль</label>            <br>
+            </td>
+            <td class="codeImage"><img src="./resources/pass.PNG" alt="код поля пароля"></td>
+            <td class="comment"></td>
+        </tr>
+        <tr class="number">
+            <td class="tipEl">number</td>
+            <td class="samEl">
+                <input type="number" id="number" name="number"
+                       min="1" max="5" step="1" value="1" required pattern="[0-9]"> <br>
+                <label for="number">Введите число [1-5]</label>
+            </td>
+            <td class="codeImage"><img src="./resources/number.PNG" alt="код number"></td>
+            <td class="comment">
+                    <li>min - минимальное значение</li>
+                    <li>max - максимальное</li>
+                    <li>step - величина шага</li>
+                    <li>required pattern - допустимые значения</li>
+            </td>
+        </tr>
+        <tr class="checkbox">
+            <td class="tipEl">checkbox</td>
+            <td class="samEl">
+                <input type="checkbox" id="checkbox_2" name="checkbox_2">
+                <label for="checkbox_2">Отметьте, если надо</label>
+            </td>
+            <td class="codeImage"><img src="./resources/checkbox.PNG" alt="код чекбокса"></td>
+            <td class="comment"></td>
+        </tr>
+        <tr class="range">
+            <td class="tipEl">range</td>
+            <td class="samEl">
+                <input type="range" id="range" name="range"
+                                    min="0" max="10" step="1"> <br>
+                <label for="range">Двигайте</label>
+            </td>
+            <td class="codeImage"><img src="./resources/range.PNG" alt="код ползунка"></td>
+            <td class="comment">
+                    <li>min, max и step - по аналогии с Number</li>
+            </td>
+        </tr>
+        <tr class="dropdown">
+            <td class="tipEl">dropdown</td>
+            <td class="samEl">
+                <label for="dropdown">Спортзал</label><br>
+                <select id="dropdown" name="dropdown">
+                    <option value="cleverSport">cleverSport</option>
+                    <option value="smartGym">smartGym</option>
+                    <option value="orangeFitness">orangeFitness</option>
+                </select>
+            </td>
+            <td class="codeImage"><img src="./resources/dropdown.PNG" alt="код выпадающего списка"></td>
+            <td class="comment">
+                <li>dropdown: только ТЕ варианты, которые предложены</li>
+                <li>вместо Input - парный Select</li>
+                <li>структура аналогична спискам ul\li </li>
+                <li>Select - аналог ul, а вместо li - Option</li>
+            </td>
+        </tr>
+        <tr class="datalist">
+            <td class="tipEl">datalist</td>
+            <td class="samEl">
+                <label for="datalist">Покушать</label>                                  <br>
+                <input type="text" id="datalist" name="datalist" list="datalistOne"
+                                                        placeholder="сам сготовлю">
+                <datalist id="datalistOne">
+                    <option value="Колобок">Колобок</option>
+                    <option value="P.love">P.love</option>
+                    <option value="Бахор">Бахор</option>
+                </datalist>
+            </td>
+            <td class="codeImage"><img src="./resources/datalist.PNG" alt="код даталиста"></td>
+            <td class="comment">
+                <li>datalist: предлагаемые варианты ЛИБО вбить свой</li>
+                <li>...поэтому есть Input, ссылающийся на id datalist-a через list = " "</li>
+                <li>структура аналогична спискам ul\li </li>
+                <li>Datalist - аналог ul, а вместо li - Option</li>
+            </td>
+        </tr>
+    </table>
+    <!-- -------------------------------------------------------------------- -->
+</main>
+
+<footer>
+
+</footer>
+
+</body>
+</html>
